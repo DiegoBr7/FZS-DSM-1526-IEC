@@ -1,0 +1,14 @@
+# pipeline name
+name: limitando triggers
+on:
+  push:
+    branches: [main, develop]
+      - main
+      - develop
+
+jobs:
+  ci-cd:
+  name: Teste de Integração
+  runs-on: ubuntu-latest
+  steps:
+    - run: echo "Olá, Fatec!"
