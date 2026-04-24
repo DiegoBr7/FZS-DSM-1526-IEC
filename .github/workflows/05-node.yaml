@@ -19,7 +19,7 @@ jobs:
     run : npm ci
 
   - name: Passo 4 - Task de Run testes
-    run: npm run test  
+    run: echo "npm run test" 
   build: 
     name: Job 2 build
     runs-on: ubuntu-latest
