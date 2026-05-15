@@ -2,7 +2,8 @@
 
 # $ {{ }}
 # github.actor , event_name  , ref , repository , workspace
-# runner.os , status
+# runner.os 
+# job.status
 
 name : Variáveis de açõesa do Github
 run-name: ${{ github.actor }} está testando GitHub Actions
@@ -12,5 +13,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "O job dispariou um ${{ github.event_name }} evento."
-      - run: echo "Rodando em u ${{ runner.os }} servidor."
+      - run: echo "Rodando em um ${{ runner.os }} servidor."
       - run: echo 'O nome da branch é ${{ github.ref }} do repositorio ${{ github.repository}} '
+
+      - name: Check out no repositório do código
+        uses: actions/checkout@v4
+
+      - run: echo Repositório ${{ github.repository }} clonado.
+      - name: Lista arquivos do repositório
+        run: |
+          ls ${{ github.workspace }}
+          echo "O status do job é ${{ job.status}}
+          
+      
