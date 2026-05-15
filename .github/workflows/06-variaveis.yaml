@@ -6,9 +6,9 @@
 
 name : Variáveis de açõesa do Github
 run-name: ${{ github.actor }} está testando GitHub Actions
-on [push]
+on: [push]
 jobs:
   Explorando-GitHub-Actions:
-    runs-on: ubuntu-lastest
+    runs-on: ubuntu-latest
     steps:
       - run: echo "O job dispariou um ${{ github.event_name }} evento."
